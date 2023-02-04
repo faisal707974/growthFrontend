@@ -1,0 +1,90 @@
+.WebWordCount {
+    nav {
+        display: flex;
+        gap: 30px;
+        padding: 20px;
+
+        button {
+            width: 200px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .webpage-scraper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        gap: 30px;
+
+        .input {
+            input {
+                width: 400px;
+                height: 50px;
+                padding: 0 30px;
+
+                &::placeholder {
+                    text-align: center;
+                }
+            }
+
+            p {
+                height: 20px;
+                margin: 0;
+                color: red;
+            }
+        }
+
+        button {
+            border-radius: 100px;
+            padding: 0 50px;
+        }
+
+
+        .details {
+            height: 200px;
+            text-align: center;
+            color: green;
+        }
+    }
+
+    .results {
+        table {
+            table-layout: fixed;
+            margin: 0 auto;
+            width: 100%;
+
+            th,
+            td {
+                width: 200px;
+                border: 1px solid black;
+            }
+
+            th,
+            td {
+                text-align: center;
+                width: 10ch;
+            }
+
+            th:first-of-type,
+            td:first-of-type {
+                width: 300px;
+            }
+
+            em {
+                cursor: pointer;
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+            p{
+                margin: 0;
+            }
+        }
+    }
+}
