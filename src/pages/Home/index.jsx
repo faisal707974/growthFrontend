@@ -12,8 +12,10 @@ export default function Index() {
     const [details, setDetails] = useState({})
     const [notification, setNotification] = useState('')
 
+    const baseurl = 'https://wild-red-bull-shoe.cyclic.app/'
+
     useEffect(() => {
-        axios.get('http://localhost:5000/listInsights').then((res) => {
+        axios.get(baseurl + 'listInsights').then((res) => {
             setData(res.data)
         }).catch((err) => {
             console.log(err)
@@ -22,7 +24,7 @@ export default function Index() {
 
     async function onSubmit() {
         try {
-            const res = await axios.post('http://localhost:5000/getInsights', { url: url })
+            const res = await axios.post(baseurl + 'getInsights', { url: url })
             if (res.status === 200) {
                 setDetails({ success: res.data.message, url: res.data.addedObj.Domain })
             }
@@ -33,7 +35,7 @@ export default function Index() {
 
     async function removeInsight(id) {
         try {
-            const res = await axios.delete('http://localhost:5000/removeInsights/' + id)
+            const res = await axios.delete(baseurl + 'removeInsights/' + id)
             console.log(res)
             setNotification(res.data.message)
             setTimeout(() => {
@@ -46,7 +48,7 @@ export default function Index() {
 
     async function favInsight(id) {
         try {
-            const res = await axios.patch('http://localhost:5000/FavInsights/' + id)
+            const res = await axios.patch(baseurl + 'FavInsights/' + id)
             console.log(res)
             setNotification(res.data.message)
             setTimeout(() => {
